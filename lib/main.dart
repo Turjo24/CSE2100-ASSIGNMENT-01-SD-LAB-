@@ -186,6 +186,12 @@ class _BuyNowPageState extends State<BuyNowPage> {
                   method: 'Rocket',
                   onPressed: () => selectPaymentMethod('Rocket'),
                 ),
+
+              ],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
                 visaPaymentMethodButton(
                   method: 'Visa',
                   onPressed: () => selectPaymentMethod('Visa'),
@@ -198,12 +204,6 @@ class _BuyNowPageState extends State<BuyNowPage> {
                   method: 'AmEx',
                   onPressed: () => selectPaymentMethod('AmEx'),
                 ),
-              ],
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
 
               ],
             ),
