@@ -31,37 +31,40 @@ class Productdetails extends StatelessWidget {
       appBar: AppBar(
         title: Text('Product Details'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+      body: Container(
+        color: Colors.deepOrange,
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
 
-            ProductCard(
-              name: 'iPhone 11 128GB (Singapore Unofficial)',
-              image: 'https://www.startech.com.bd/image/cache/catalog/mobile/apple/iphone-11/iphone-11-black-500x500.webp',
-              price: '৳68,500',
-              features: [
-                'Model: iPhone 11',
-                'Display: 6.1" Liquid Retina HD display',
-                'Processor: A13 Bionic Chip, Storage: 128GB',
-                'Camera: 12MP + 12MP Rear, 12MP Front'
-              ],
-            ),
-            SizedBox(height: 14),
-            ProductCard(
-              name: 'Vivo Y27e Smartphone (8/256GB)',
-              image: 'https://www.startech.com.bd/image/cache/catalog/mobile/vivo/y27e/y27e-02-500x500.webp',
-              price: '৳34,000',
-              features: [
-                'Model: Y27e',
-                'Display: 6.62" FHD+120Hz Colour-Rich Display',
-                'Processor: MediaTek Helio G99 (6 nm)',
-              ],
-            ),
+              ProductCard(
+                name: 'iPhone 11 128GB (Singapore Unofficial)',
+                image: 'https://www.startech.com.bd/image/cache/catalog/mobile/apple/iphone-11/iphone-11-black-500x500.webp',
+                price: '৳68,500',
+                features: [
+                  'Model: iPhone 11',
+                  'Display: 6.1" Liquid Retina HD display',
+                  'Processor: A13 Bionic Chip, Storage: 128GB',
+                  'Camera: 12MP + 12MP Rear, 12MP Front'
+                ],
+              ),
+              SizedBox(height: 14),
+              ProductCard(
+                name: 'Vivo Y27e Smartphone (8/256GB)',
+                image: 'https://www.startech.com.bd/image/cache/catalog/mobile/vivo/y27e/y27e-02-500x500.webp',
+                price: '৳34,000',
+                features: [
+                  'Model: Y27e',
+                  'Display: 6.62" FHD+120Hz Colour-Rich Display',
+                  'Processor: MediaTek Helio G99 (6 nm)',
+                ],
+              ),
 
-            // Other widgets can be added here
-          ],
+              // Other widgets can be added here
+            ],
+          ),
         ),
       ),
     );
@@ -87,51 +90,54 @@ class ProductCard extends StatelessWidget {
       elevation: 4.0,
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              name,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+        child: Container(
+          color: Colors.blue.shade400,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                name,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 8),
-            Image.network(
-              image,
-              height: 100,
-              width: 100,
-              fit: BoxFit.contain,
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Price: $price',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+              SizedBox(height: 8),
+              Image.network(
+                image,
+                height: 100,
+                width: 100,
+                fit: BoxFit.contain,
               ),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Key Features:',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
+              SizedBox(height: 8),
+              Text(
+                'Price: $price',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: features.map((feature) => Text('- $feature')).toList(),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context) => Home()));
-                // Implement your Buy Now action
-              },
-              child: Text('Buy Now'),
-            ),
-          ],
+              SizedBox(height: 8),
+              Text(
+                'Key Features:',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: features.map((feature) => Text('- $feature')).toList(),
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => Home()));
+                  // Implement your Buy Now action
+                },
+                child: Text('Buy Now',style: TextStyle(color: Colors.limeAccent),),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -183,85 +189,101 @@ class _BuyNowPageState extends State<BuyNowPage> {
 
 
             SizedBox(height: 16),
-             Padding(
-               padding: const EdgeInsets.only(left: 10.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10.0),
-                      child: BkashPaymentMethodButton(
-                        method: 'BKash',
-                        onPressed: () => selectPaymentMethod('BKash'),
+             Container(
+               color: Colors.grey,
+               child: Padding(
+                 padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: BkashPaymentMethodButton(
+                          method: 'BKash',
+                          onPressed: () => selectPaymentMethod('BKash'),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10.0),
-                      child: rocketPaymentMethodButton(
-                        method: 'Rocket',
-                        onPressed: () => selectPaymentMethod('Rocket'),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: rocketPaymentMethodButton(
+                          method: 'Rocket',
+                          onPressed: () => selectPaymentMethod('Rocket'),
+                        ),
                       ),
-                    ),
-                    visaPaymentMethodButton(
-                      method: 'Visa',
-                      onPressed: () => selectPaymentMethod('Visa'),
-                    ),
-                  ],
-                ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: visaPaymentMethodButton(
+                          method: 'Visa',
+                          onPressed: () => selectPaymentMethod('Visa'),
+                        ),
+                      ),
+                    ],
+                  ),
 
+               ),
              ),
 
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0,top: 10.0),
-              child: SingleChildScrollView(
+            Container(
+              color: Colors.grey,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: SingleChildScrollView(
 
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left:1.0),
+                            child: mcPaymentMethodButton(
+                              method: 'Mastercard',
+                              onPressed: () => selectPaymentMethod('Mastercard'),
+                            ),
+                          ),
 
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10.0),
-                      child: mcPaymentMethodButton(
-                        method: 'Mastercard',
-                        onPressed: () => selectPaymentMethod('Mastercard'),
+                      Padding(
+                        padding: const EdgeInsets.only(left:20.0),
+                        child: amexPaymentMethodButton(
+                          method: 'AmEx',
+                          onPressed: () => selectPaymentMethod('AmEx'),
+                        ),
                       ),
-                    ),
-                    amexPaymentMethodButton(
-                      method: 'AmEx',
-                      onPressed: () => selectPaymentMethod('AmEx'),
-                    ),
 
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
 
 
 
-            SizedBox(height: 16),
-            DropdownButton<String>(
-              value: selectedPaymentMethod,
-              items: ['BKash', 'Rocket', 'Visa', 'Mastercard', 'AmEx']
-                  .map((method) => DropdownMenuItem<String>(
-                value: method,
-                child: Text(method),
-              ))
-                  .toList(),
-              onChanged: (value) {
-                setState(() {
-                  selectedPaymentMethod = value!;
-                });
-              },
+            SizedBox(height: 100),
+            Center(
+              child: DropdownButton<String>(
+                value: selectedPaymentMethod,
+                items: ['BKash', 'Rocket', 'Visa', 'Mastercard', 'AmEx']
+                    .map((method) => DropdownMenuItem<String>(
+                  value: method,
+                  child: Text(method),
+                ))
+                    .toList(),
+                onChanged: (value) {
+                  setState(() {
+                    selectedPaymentMethod = value!;
+                  });
+                },
+              ),
             ),
             SizedBox(height: 16),
             Padding(
-              padding: const EdgeInsets.only(top: 310.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  // Implement your logic for the "Go Back" button
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => turjo()));
-                },
-                child: Text('Go Back'),
+              padding: const EdgeInsets.only(top: 200.0),
+              child: SingleChildScrollView(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Implement your logic for the "Go Back" button
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => turjo()));
+                  },
+                  child: Text('Go Back'),
+                ),
               ),
             ),
             // Other widgets can be added here
