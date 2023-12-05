@@ -162,6 +162,7 @@ class _BuyNowPageState extends State<BuyNowPage> {
       appBar: AppBar(
         title: Text('Buy Now'),
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -172,41 +173,71 @@ class _BuyNowPageState extends State<BuyNowPage> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
+                color: Colors.green,
+
               ),
             ),
+
+
+
+
+
             SizedBox(height: 16),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                BkashPaymentMethodButton(
-                  method: 'BKash',
-                  onPressed: () => selectPaymentMethod('BKash'),
-                ),
-                rocketPaymentMethodButton(
-                  method: 'Rocket',
-                  onPressed: () => selectPaymentMethod('Rocket'),
-                ),
-
-              ],
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                visaPaymentMethodButton(
-                  method: 'Visa',
-                  onPressed: () => selectPaymentMethod('Visa'),
-                ),
-                mcPaymentMethodButton(
-                  method: 'Mastercard',
-                  onPressed: () => selectPaymentMethod('Mastercard'),
-                ),
-                amexPaymentMethodButton(
-                  method: 'AmEx',
-                  onPressed: () => selectPaymentMethod('AmEx'),
+             Padding(
+               padding: const EdgeInsets.only(left: 10.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: BkashPaymentMethodButton(
+                        method: 'BKash',
+                        onPressed: () => selectPaymentMethod('BKash'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: rocketPaymentMethodButton(
+                        method: 'Rocket',
+                        onPressed: () => selectPaymentMethod('Rocket'),
+                      ),
+                    ),
+                    visaPaymentMethodButton(
+                      method: 'Visa',
+                      onPressed: () => selectPaymentMethod('Visa'),
+                    ),
+                  ],
                 ),
 
-              ],
+             ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0,top: 10.0),
+              child: SingleChildScrollView(
+
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: mcPaymentMethodButton(
+                        method: 'Mastercard',
+                        onPressed: () => selectPaymentMethod('Mastercard'),
+                      ),
+                    ),
+                    amexPaymentMethodButton(
+                      method: 'AmEx',
+                      onPressed: () => selectPaymentMethod('AmEx'),
+                    ),
+
+                  ],
+                ),
+              ),
             ),
+
+
+
             SizedBox(height: 16),
             DropdownButton<String>(
               value: selectedPaymentMethod,
@@ -259,9 +290,9 @@ class BkashPaymentMethodButton extends StatelessWidget {
       onPressed: onPressed,
       child: Image.asset(
         'lib/assets/Bkash.png',
-       // Assuming you have images named 'BKash.png', 'Rocket.png', etc.
-        height: 50,
-        width: 50,
+
+        height: 70,
+        width: 70,
       ),
     );
   }
@@ -279,9 +310,9 @@ class rocketPaymentMethodButton extends StatelessWidget {
       onPressed: onPressed,
       child: Image.asset(
         'lib/assets/rocket.png',
-        // Assuming you have images named 'BKash.png', 'Rocket.png', etc.
-        height: 50,
-        width: 50,
+
+        height: 70,
+        width: 70,
       ),
     );
   }
@@ -298,9 +329,9 @@ class visaPaymentMethodButton extends StatelessWidget {
       onPressed: onPressed,
       child: Image.asset(
         'lib/assets/visa.png',
-        // Assuming you have images named 'BKash.png', 'Rocket.png', etc.
-        height: 50,
-        width: 50,
+
+        height: 70,
+        width: 70,
       ),
     );
   }
@@ -319,9 +350,9 @@ class mcPaymentMethodButton extends StatelessWidget {
       onPressed: onPressed,
       child: Image.asset(
         'lib/assets/mastercard.png',
-        // Assuming you have images named 'BKash.png', 'Rocket.png', etc.
-        height: 50,
-        width: 50,
+
+        height: 70,
+        width: 70,
       ),
     );
   }
@@ -341,9 +372,9 @@ class amexPaymentMethodButton extends StatelessWidget {
       onPressed: onPressed,
       child: Image.asset(
         'lib/assets/amex.png',
-        // Assuming you have images named 'BKash.png', 'Rocket.png', etc.
-        height: 50,
-        width: 50,
+
+        height: 70,
+        width: 70,
       ),
     );
   }
