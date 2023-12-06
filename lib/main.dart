@@ -183,7 +183,7 @@ class _BuyNowPageState extends State<BuyNowPage> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.green,
+                color: Colors.black,
 
               ),
             ),
@@ -294,7 +294,7 @@ class _BuyNowPageState extends State<BuyNowPage> {
           ],
         ),
       ),
-    );
+    backgroundColor: Colors.cyan,);
   }
 
   void selectPaymentMethod(String method) {
