@@ -293,7 +293,7 @@ class _BuyNowPageState extends State<BuyNowPage> {
           ],
         ),
       ),
-      backgroundColor: Colors.cyan.shade800,);
+      backgroundColor: Colors.cyan,);
   }
 
   void selectPaymentMethod(String method) {
