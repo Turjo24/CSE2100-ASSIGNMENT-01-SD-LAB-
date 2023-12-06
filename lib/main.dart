@@ -285,7 +285,7 @@ class _BuyNowPageState extends State<BuyNowPage> {
                     Navigator.push(context,MaterialPageRoute(builder: (context) => turjo()));
                   },
                   child: Container(
-                      child: Text('Go Back',style: TextStyle(color: Colors.yellow,fontWeight: FontWeight.bold),)),
+                      child: Text('Go Back',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
                 ),
               ),
             ),
