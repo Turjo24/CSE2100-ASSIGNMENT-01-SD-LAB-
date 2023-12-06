@@ -62,7 +62,6 @@ class Productdetails extends StatelessWidget {
                 ],
               ),
 
-              // Other widgets can be added here
             ],
           ),
         ),
@@ -284,7 +283,6 @@ class _BuyNowPageState extends State<BuyNowPage> {
               child: SingleChildScrollView(
                 child: ElevatedButton(
                   onPressed: () {
-                    // Implement your logic for the "Go Back" button
                     Navigator.push(context,MaterialPageRoute(builder: (context) => turjo()));
                   },
                   child: Container(
@@ -292,7 +290,7 @@ class _BuyNowPageState extends State<BuyNowPage> {
                 ),
               ),
             ),
-            // Other widgets can be added here
+
           ],
         ),
       ),
