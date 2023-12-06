@@ -40,7 +40,7 @@ class Productdetails extends StatelessWidget {
             children: [
 
               ProductCard(
-                name: 'iPhone 11 128GB (Singapore Unofficial)',
+                name: 'iPhone 11 128GB ',
                 image: 'https://www.startech.com.bd/image/cache/catalog/mobile/apple/iphone-11/iphone-11-black-500x500.webp',
                 price: '৳68,500',
                 features: [
@@ -91,7 +91,7 @@ class ProductCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Container(
-          color: Colors.blue.shade400,
+          color: Colors.red.shade400,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -129,12 +129,17 @@ class ProductCard extends StatelessWidget {
                 children: features.map((feature) => Text('- $feature')).toList(),
               ),
               SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Home()));
-                  // Implement your Buy Now action
-                },
-                child: Text('Buy Now',style: TextStyle(color: Colors.limeAccent),),
+              Container(
+                child: ElevatedButton(
+
+                  onPressed: () {
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => Home()));
+                    // Implement your Buy Now action
+                  },
+                  child: Container(
+                    color: Colors.yellow,
+                      child: Text('Buy Now',style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),)),
+                ),
               ),
             ],
           ),
@@ -282,7 +287,8 @@ class _BuyNowPageState extends State<BuyNowPage> {
                     // Implement your logic for the "Go Back" button
                     Navigator.push(context,MaterialPageRoute(builder: (context) => turjo()));
                   },
-                  child: Text('Go Back'),
+                  child: Container(
+                      child: Text('Go Back',style: TextStyle(color: Colors.yellow,fontWeight: FontWeight.bold),)),
                 ),
               ),
             ),
