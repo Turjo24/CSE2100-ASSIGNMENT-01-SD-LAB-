@@ -32,7 +32,6 @@ class Productdetails extends StatelessWidget {
         title: Text('Product Details'),
       ),
       body: Container(
-        color: Colors.deepOrange,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
@@ -66,7 +65,7 @@ class Productdetails extends StatelessWidget {
           ),
         ),
       ),
-    );
+  backgroundColor: Colors.yellow,  );
   }
 }
 
@@ -136,7 +135,7 @@ class ProductCard extends StatelessWidget {
                     // Implement your Buy Now action
                   },
                   child: Container(
-                    color: Colors.yellow,
+                    color: Colors.amber,
                       child: Text('Buy Now',style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),)),
                 ),
               ),
